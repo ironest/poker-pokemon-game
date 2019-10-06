@@ -1,0 +1,23 @@
+<h1>Here is your list of Robots</h1>
+
+<% @robots.each_with_index do |robot, index| %>
+    <div class="robotCard <%=robot["planet"].downcase%>">
+        <h2><%= robot["name"]%></h2>
+        <img src="<%= "https://robohash.org/#{robot["img_id"]}?size=200x200&set=set1" %>"/>
+
+        <div class="robotPowerBar">
+            <span style="width: <%=robot["power"]%>%"><%=robot["power"]%></span>
+        </div>
+
+        <p>Rank: <%= robot["rank"]%></p>
+        <p>Planet: <%= robot["planet"]%></p>
+        <%= link_to("Show detail", robot_path(index))%>
+    </div>
+<% end %>
+
+<br />
+<%= link_to("Buy a new robot", new_robot_path)%>
+<br />
+<%= link_to("Refresh robots", refresh_path)%>
+
+
