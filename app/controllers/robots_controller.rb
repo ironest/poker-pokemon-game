@@ -3,22 +3,28 @@ class RobotsController < ApplicationController
     before_action :setup_session_robot
 
     def index
-
-        session[:robot][3] = nil
         @robots = session[:robot]
-    end
-
-    def create
+        @squad_total_points = 0
+        @robots.each do |robot|
+            @squad_total_points += robot["power"] if robot
+        end
 
     end
 
     def new
+        id = params[:id].to_i
+        session[:robot][id] = get_new_robot
+        redirect_to robots_path()
+    end
 
+    def delete
+        id = params[:id].to_i
+        session[:robot][id] = nil
+        redirect_to robots_path()
     end
 
     def refresh
-        session.delete(:robot)
-        setup_session_robot
+        8.times { |idx| session[:robot][idx] = nil}
         redirect_to robots_path()
     end
 
