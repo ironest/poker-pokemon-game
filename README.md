@@ -1,23 +1,22 @@
 # README
 
-* Ruby version
+Live: [https://robo-squad.herokuapp.com/robots](https://robo-squad.herokuapp.com/robots)
 
-ruby 2.6.3
+Repo: [github.com/ironest/robot-game](https://github.com/ironest/robot-game)
 
-* System dependencies
+Contributors: [Riccardo Carzaniga](https://github.com/ironest)
 
-Ruby
-Rails
+## Description
 
-* Configuration
+Robo-Squad is a single-page game where the player is requested to create a team of 8 robots. Each robot is randomly generated and has two main properties: Planet of origin (Mercury, Venus, Earth, Jupiter, Saturn, Uranus, Neptune) and a Power Level (randomly assigned as a number between 1 and 100).
+The player is challenged to create a team with robots from 8 different plant and, at the same time, trying to score the highest score (calculated as the sum of each robot's power level).
 
-* Database creation / Database initialization
+## Prerequisites
 
-No database required.
-The project has been generated with -O option, (--skip-active-record)
+* Ruby version 2.6.3
 
-* How to run the test suite
+* Rails
 
-No test suite at this stage
+* No database required as the project has been generated with -O option, (--skip-active-record)
 
-* Deployment instructions
+* No test suite at this stage
