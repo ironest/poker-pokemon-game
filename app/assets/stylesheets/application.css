@@ -14,134 +14,157 @@
  *= require_self
  */
 
-@import url('https://fonts.googleapis.com/css?family=Roboto:400,700&display=swap');
+ @import url('https://fonts.googleapis.com/css?family=Roboto:400,700&display=swap');
 
-* {
-   font-family: 'Roboto', sans-serif;
-   color: #F0F2F2;
-   font-weight: normal;
-   padding: 0;
-   margin: 0;
-   text-decoration: none;
-}
-
-header {
-    text-align: center;
-}
-
-header h1 {
-    margin: 20px 0;
-    font-weight: bold;
-}
-
-header h2 {
-    margin: 20px 0;
-}
-
-.robot-component-list {
-    margin: 0 auto;
-    margin-top: 20px;
-    max-width: 800px;
-    display: flex;
-    flex-flow: row wrap;
-    justify-content: center;
-}
-
-.mercury {
-    background-color: #BFBFBF;
-    /* color: #A8A8A8 */
-}
-.earth {
-    background-color: #81D3EE;
-    /* color: #10AAE2; */
-}
-.mars {
-    background-color: #F86148;
-    /* color: #EE1C25; */
-}
-.venus {
-    background-color: #E38ABF;
-    /* color: #DA1386; */
-}
-.jupiter {
-    background-color: #8BD6C8;
-    /* color: #0CD497; */
-}
-.saturn {
-    background-color: #FFDD82;
-    /* color: #FDD200; */
-}
-.uranus {
-    background-color: #7CAFD7;
-    /* color: #0C5EBA; */
-}
-.neptune {
-    background-color: #B19DCF;
-    /* color: #7632A7; */
-}
-
-body {
-    background-color: #343240;
-}
-
-.robot-component {
-    display: flex;
-    padding: 10px;
-    margin: 5px;
-    width: 290px;
-}
-
-.empty {
-    border: 2px dashed rgba(255, 255, 255, 0.3);
-    background-color: rgba(255, 255, 255, 0.1);
-    width: 286px;
-    height: 100px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-.robot-info {
-    flex-grow: 1;
-    display: flex;
-    flex-flow: column;
-    justify-content: space-between;
-    margin-left: 10px;
-}
-.robot-info h2,
-.robot-info h3 {
-    text-shadow: 1px 1px 1px rgba(0,0,0,0.5);
-}
-
-.robot-avatar {
-    width: 100px;
-    height: 100px;
-    background: rgba(0, 0, 0, 0.1);
-    box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.25), 0 1px rgba(255, 255, 255, 0.25);
-}
-
-.robot-power-bar {
-    display: block;
-    font-size: 0px;
-    line-height: 0px;
-    padding: 5px;
-    background: rgba(0, 0, 0, 0.1);
-    box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.25), 0 1px rgba(255, 255, 255, 0.25);
-    text-align: left;
-}
-
-.robot-power-bar span {
-    display: inline-block;
-    height: 8px;
-    vertical-align: middle;
-    text-align: right;
-    background-color: #f56982;
-    background-size: 100%;
-    background-image: linear-gradient(to bottom, #f2395a, #b90c2b);
-}
-
-@media only screen and (min-width: 400px) {
-    .robot-component {
-        margin: 20px;
-    }
-  }
+ * {
+    font-family: 'Roboto', sans-serif;
+    color: #F0F2F2;
+    font-weight: normal;
+    padding: 0;
+    margin: 0;
+    text-decoration: none;
+ }
+ 
+ header {
+     text-align: center;
+ }
+ 
+ header h1 {
+     margin: 20px 0;
+     font-weight: bold;
+ }
+ 
+ header h2 {
+     margin: 20px 0;
+     color: #B4C4D9
+ }
+ 
+ header p {
+     color: #8590A6;
+ }
+ 
+ .robot-component-list {
+     margin: 0 auto;
+     margin-top: 20px;
+     max-width: 800px;
+     display: flex;
+     flex-flow: row wrap;
+     justify-content: center;
+ }
+ 
+ .mercury {
+     background-color: #BFBFBF;
+     /* color: #A8A8A8 */
+ }
+ .earth {
+     background-color: #81D3EE;
+     /* color: #10AAE2; */
+ }
+ .mars {
+     background-color: #F87648;
+     /* color: #EE1C25; */
+ }
+ .venus {
+     background-color: #E38ABF;
+     /* color: #DA1386; */
+ }
+ .jupiter {
+     background-color: #8BD6C8;
+     /* color: #0CD497; */
+ }
+ .saturn {
+     background-color: #FFDD82;
+     /* color: #FDD200; */
+ }
+ .uranus {
+     background-color: #7CAFD7;
+     /* color: #0C5EBA; */
+ }
+ .neptune {
+     background-color: #B19DCF;
+     /* color: #7632A7; */
+ }
+ 
+ body {
+     background-color: #343240;
+ }
+ 
+ .robot-component {
+     display: flex;
+     padding: 10px;
+     margin: 5px;
+     width: 290px;
+     position: relative;
+ }
+ 
+ .empty {
+     border: 2px dashed rgba(255, 255, 255, 0.3);
+     background-color: rgba(255, 255, 255, 0.1);
+     width: 286px;
+     height: 96px;
+     display: flex;
+     justify-content: center;
+     align-items: center;
+ }
+ 
+ .robot-info {
+     flex-grow: 1;
+     display: flex;
+     flex-flow: column;
+     justify-content: space-between;
+     margin-left: 10px;
+ }
+ 
+ .robot-icon-delete {
+     padding: 5px;
+     background: rgba(0, 0, 0, 0.1);
+     box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.25), 0 1px rgba(255, 255, 255, 0.25);
+     width: 20px;
+     height: 20px;
+     text-align: center;
+     border-radius: 0px;
+     position: absolute;
+     right: 10px;
+ }
+ 
+ .robot-component h2,
+ .robot-component h3
+ {
+     text-shadow: 1px 1px 1px rgba(0,0,0,0.5);
+ }
+ 
+ .robot-avatar {
+     width: 100px;
+     height: 100px;
+     background: rgba(0, 0, 0, 0.1);
+     box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.25), 0 1px rgba(255, 255, 255, 0.25);
+ }
+ 
+ .robot-power-bar {
+     display: block;
+     font-size: 12px;
+     line-height: 14px;
+     padding: 4px;
+     border-radius: 12px;
+     background: rgba(0, 0, 0, 0.1);
+     box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.25), 0 1px rgba(255, 255, 255, 0.25);
+     text-align: left;
+ }
+ 
+ .robot-power-bar span {
+     display: inline-block;
+     height: 14px;
+     vertical-align: middle;
+     text-align: right;
+     padding: 0 3px;
+     border-radius: 7px 0 0 7px;
+     background-color: #f56982;
+     background-size: 100%;
+     background-image: linear-gradient(to bottom, #f2395a, #b90c2b);
+ }
+ 
+ @media only screen and (min-width: 400px) {
+     .robot-component {
+         margin: 20px;
+     }
+ }
