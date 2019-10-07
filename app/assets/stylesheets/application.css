@@ -163,6 +163,15 @@
      background-image: linear-gradient(to bottom, #f2395a, #b90c2b);
  }
  
+ .new-game {
+     margin: 20px;
+ }
+
+ .squad-total-points{
+     color: #F0F2F2;
+     text-decoration: underline;
+ }
+
  @media only screen and (min-width: 400px) {
      .robot-component {
          margin: 20px;
