@@ -11,9 +11,10 @@
                     <h2><%=robot["name"]%></h2>
                     <h3><%=robot["planet"]%></h3>
                     <div class="robot-power-bar">
-                        <span style="width: <%=robot["power"]%>%"></span>
+                        <span style="width: <%=robot["power"]%>%"><%=robot["power"]%></span>
                     </div>
                 </div>
+                <a href="#" class="robot-icon-delete">x</a>
             </div>
 
         <% else %>
@@ -27,6 +28,3 @@
     <% end %>
 
 </div>
-
-<%= image_tag("delete-button.png", alt: "Delete Robot", class: '')%>
-<%= image_tag("information.png", alt: "Information about the Robot", class: '')%>
