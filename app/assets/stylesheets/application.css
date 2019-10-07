@@ -14,24 +14,37 @@
  *= require_self
  */
 
- @import url('https://fonts.googleapis.com/css?family=Roboto:400,700&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Roboto:400,700&display=swap');
 
-
- * {
-    font-family: 'Roboto', sans-serif;
- }
-
-.robotCard {
-    border: 1px solid black;
-    padding: 10px;
-    margin: 10px;
-    display: inline-block;
-    min-width: 200px;
-    text-align: center;
-
+* {
+   font-family: 'Roboto', sans-serif;
+   color: #F0F2F2;
+   font-weight: normal;
+   padding: 0;
+   margin: 0;
+   text-decoration: none;
 }
-.robotCard h2 {
-    margin: 0;
+
+header {
+    text-align: center;
+}
+
+header h1 {
+    margin: 20px 0;
+    font-weight: bold;
+}
+
+header h2 {
+    margin: 20px 0;
+}
+
+.robot-component-list {
+    margin: 0 auto;
+    margin-top: 20px;
+    max-width: 800px;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
 }
 
 .mercury {
@@ -67,33 +80,68 @@
     /* color: #7632A7; */
 }
 
-.robotPowerBar {
-    position: relative;
-    margin: 10px 0;
+body {
+    background-color: #343240;
+}
+
+.robot-component {
+    display: flex;
+    padding: 10px;
+    margin: 5px;
+    width: 290px;
+}
+
+.empty {
+    border: 2px dashed rgba(255, 255, 255, 0.3);
+    background-color: rgba(255, 255, 255, 0.1);
+    width: 286px;
+    height: 100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.robot-info {
+    flex-grow: 1;
+    display: flex;
+    flex-flow: column;
+    justify-content: space-between;
+    margin-left: 10px;
+}
+.robot-info h2,
+.robot-info h3 {
+    text-shadow: 1px 1px 1px rgba(0,0,0,0.5);
+}
+
+.robot-avatar {
+    width: 100px;
+    height: 100px;
+    background: rgba(0, 0, 0, 0.1);
+    box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.25), 0 1px rgba(255, 255, 255, 0.25);
+}
+
+.robot-power-bar {
     display: block;
+    font-size: 0px;
+    line-height: 0px;
     padding: 5px;
-    font-size: 16px;
-    line-height: 16px;
-    border-radius: 30px;
     background: rgba(0, 0, 0, 0.1);
     box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.25), 0 1px rgba(255, 255, 255, 0.25);
     text-align: left;
 }
 
-.robotPowerBar span {
-    position: relative;
+.robot-power-bar span {
     display: inline-block;
-    
-    height: 20px;
-    border-radius: 10px 0 0 10px;
+    height: 8px;
     vertical-align: middle;
+    text-align: right;
     background-color: #f56982;
     background-size: 100%;
     background-image: linear-gradient(to bottom, #f2395a, #b90c2b);
-    text-align: center;
-    color: white;
-
-    font-size: 16px;
-    line-height: 20px;
-
 }
+
+@media only screen and (min-width: 400px) {
+    .robot-component {
+        margin: 20px;
+    }
+  }

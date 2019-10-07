@@ -1,23 +1,32 @@
-<h1>Here is your list of Robots</h1>
 
-<% @robots.each_with_index do |robot, index| %>
-    <div class="robotCard <%=robot["planet"].downcase%>">
-        <h2><%= robot["name"]%></h2>
-        <img src="<%= "https://robohash.org/#{robot["img_id"]}?size=200x200&set=set1" %>"/>
+<div class="robot-component-list">
 
-        <div class="robotPowerBar">
-            <span style="width: <%=robot["power"]%>%"><%=robot["power"]%></span>
-        </div>
+    <% @robots.each_with_index do |robot, index| %>
 
-        <p>Rank: <%= robot["rank"]%></p>
-        <p>Planet: <%= robot["planet"]%></p>
-        <%= link_to("Show detail", robot_path(index))%>
-    </div>
-<% end %>
+        <% if robot %>
 
-<br />
-<%= link_to("Buy a new robot", new_robot_path)%>
-<br />
-<%= link_to("Refresh robots", refresh_path)%>
+            <div class="robot-component <%=robot["planet"].downcase%>">
+                <img class="robot-avatar" src="https://robohash.org/<%=robot["img_id"]%>?size=200x200&set=set1"">
+                <div class="robot-info">
+                    <h2><%=robot["name"]%></h2>
+                    <h3><%=robot["planet"]%></h3>
+                    <div class="robot-power-bar">
+                        <span style="width: <%=robot["power"]%>%"></span>
+                    </div>
+                </div>
+            </div>
 
+        <% else %>
 
+            <a href="#" class="robot-component empty">
+                <span>Create Robot</span>
+            </a>
+
+        <% end %>
+
+    <% end %>
+
+</div>
+
+<%= image_tag("delete-button.png", alt: "Delete Robot", class: '')%>
+<%= image_tag("information.png", alt: "Information about the Robot", class: '')%>

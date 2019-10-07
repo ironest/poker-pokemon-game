@@ -1,17 +1,15 @@
 <h1>Details:</h1>
 
-<div class="robotCard <%=@robot["planet"].downcase%>">
-<h2><%= @robot["name"]%></h2>
-
-<img src="<%= "https://robohash.org/#{@robot["img_id"]}?size=200x200&set=set1" %>" width=150 height=150 />
-
-<div class="robotPowerBar">
-    <span style="width: <%=@robot["power"]%>%"><%=@robot["power"]%></span>
-</div>
-
-<p>Rank: <%= @robot["rank"]%></p>
-<p>Planet: <%= @robot["planet"]%></p>
-</div>
+    <div class="robot-component <%=@robot["planet"].downcase%>">
+        <img class="robot-avatar" src="https://robohash.org/<%=@robot["img_id"]%>?size=200x200&set=set1"">
+        <div class="robot-info">
+            <h2><%=@robot["name"]%></h2>
+            <h3><%=@robot["planet"]%></h3>
+            <div class="robot-power-bar">
+                <span style="width: <%=@robot["power"]%>%"></span>
+            </div>
+        </div>
+    </div>
 
 <br />
 <%= link_to("Back", :back) %>

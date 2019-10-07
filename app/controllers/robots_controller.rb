@@ -3,6 +3,8 @@ class RobotsController < ApplicationController
     before_action :setup_session_robot
 
     def index
+
+        session[:robot][3] = nil
         @robots = session[:robot]
     end
 
@@ -26,9 +28,7 @@ class RobotsController < ApplicationController
     end
 
     def setup_session_robot
-        puts "Sono qui dentro..."
         unless session.has_key?(:robot)
-            puts "E poi sono anche qui..."
             session[:robot] = []
             8.times do
                 session[:robot].push get_new_robot
@@ -40,8 +40,6 @@ class RobotsController < ApplicationController
     def get_new_robot
         img_id = ""
         10.times { img_id << rand(0..9).to_s }
-        
-        # "https://robohash.org/#{Faker::Invoice.reference}?size=200x200&set=set1"
 
         return {
             "name" => Faker::Name.first_name,
