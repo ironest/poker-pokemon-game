@@ -1,3 +1,8 @@
+<header>
+    <h1>Space Robots</h1>
+    <h2>Your Robo-Squad power is: <span class="squad-total-points"><%=@squad_total_points%></span></h2>
+    <p>Fill in all your slots! But get rid of duplicates!</p>
+</header>
 
 <div class="robot-component-list">
 
@@ -14,17 +19,18 @@
                         <span style="width: <%=robot["power"]%>%"><%=robot["power"]%></span>
                     </div>
                 </div>
-                <a href="#" class="robot-icon-delete">x</a>
+                <%= link_to("x", delete_robot_path(index), class: "robot-icon-delete") %>
             </div>
 
         <% else %>
 
-            <a href="#" class="robot-component empty">
-                <span>Create Robot</span>
-            </a>
+            <%= link_to("Create Robot", new_robot_path(index), class: "robot-component empty") %>
 
         <% end %>
 
     <% end %>
+
+    <%= link_to("Start a new game", refresh_path, class: "new-game") %>
+
 
 </div>
