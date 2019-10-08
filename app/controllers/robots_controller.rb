@@ -12,13 +12,13 @@ class RobotsController < ApplicationController
 
     def new
         id = params[:id].to_i
-        session[:robot][id] = get_new_robot
+        session[:robot][id] = get_new_robot if (0..7).include?(id)
         redirect_to robots_path()
     end
 
     def delete
         id = params[:id].to_i
-        session[:robot][id] = nil
+        session[:robot][id] = nil if (0..7).include?(id)
         redirect_to robots_path()
     end
 
