@@ -16,7 +16,8 @@
                     <h2><%=robot["name"]%></h2>
                     <h3><%=robot["planet"]%></h3>
                     <div class="robot-power-bar">
-                        <span style="width: <%=robot["power"]%>%"><%=robot["power"]%></span>
+                        <span class="robot-power-bar-line" style="width: <%=robot["power"]%>%"></span>
+                        <span class="robot-power-value"><%=robot["power"]%></span>
                     </div>
                 </div>
                 <%= link_to("x", delete_robot_path(index), class: "robot-icon-delete") %>
