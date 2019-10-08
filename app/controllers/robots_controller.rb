@@ -8,7 +8,6 @@ class RobotsController < ApplicationController
         @robots.each do |robot|
             @squad_total_points += robot["power"] if robot
         end
-
     end
 
     def new
@@ -37,9 +36,8 @@ class RobotsController < ApplicationController
         unless session.has_key?(:robot)
             session[:robot] = []
             8.times do
-                session[:robot].push get_new_robot
+                session[:robot].push nil #get_new_robot
             end
-            session[:robot]
         end
     end
 
